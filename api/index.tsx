@@ -63,7 +63,7 @@ app.frame("/finish", (c) => {
             backgroundColor: "black",
           }}
         >
-          <p style={{fontSize: "60px"}}> Transaction Hash:</p>
+          <p style={{fontSize: "60px"}}> Interaction Failed:</p>
           <p style={{fontSize: "30px", width: "80%"}}>{transactionId}</p>
         </div>
       ),
