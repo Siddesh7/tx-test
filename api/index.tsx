@@ -47,7 +47,27 @@ app.frame("/", (c) => {
 
 app.frame("/finish", (c) => {
   const {transactionId, buttonIndex} = c;
-  console.log("Transaction ID:", transactionId);
+  if (!transactionId?.startsWith("0x"))
+    return c.res({
+      image: (
+        <div
+          style={{
+            color: "white",
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            gap: 20,
+            backgroundColor: "black",
+          }}
+        >
+          <p style={{fontSize: "60px"}}> Transaction Hash:</p>
+          <p style={{fontSize: "30px", width: "80%"}}>{transactionId}</p>
+        </div>
+      ),
+    });
   return c.res({
     image: (
       <div
