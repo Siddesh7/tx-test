@@ -24,6 +24,10 @@ app.frame("/", (c) => {
           color: "white",
           display: "flex",
           fontSize: 60,
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+          alignItems: "center",
           backgroundColor: "black",
         }}
       >
@@ -43,12 +47,17 @@ app.frame("/", (c) => {
 
 app.frame("/finish", (c) => {
   const {transactionId} = c;
+  console.log("Transaction ID:", transactionId);
   return c.res({
     image: (
       <div
         style={{
           color: "white",
           display: "flex",
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+          alignItems: "center",
           fontSize: 60,
           backgroundColor: "black",
         }}
