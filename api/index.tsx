@@ -47,6 +47,21 @@ app.frame("/", (c) => {
 
 app.frame("/finish", (c) => {
   const {transactionId, buttonIndex} = c;
+  let url;
+  switch (buttonIndex) {
+    case 1:
+      url = `https://polygonscan.com/tx/${transactionId}`;
+      break;
+    case 2:
+      url = `https://basescan.org/tx/${transactionId}`;
+      break;
+    case 3:
+      url = `https://sepolia.etherscan.io/tx/${transactionId}`;
+      break;
+    default:
+      url = `https://polygonscan.com/tx/${transactionId}`;
+      break;
+  }
   if (!transactionId?.startsWith("0x"))
     return c.res({
       image: (
@@ -87,17 +102,7 @@ app.frame("/finish", (c) => {
         <p style={{fontSize: "30px", width: "80%"}}>{transactionId}</p>
       </div>
     ),
-    intents: [
-      <Button.Link
-        href={
-          buttonIndex === 1
-            ? `https://polygonscan.com/tx/${transactionId}`
-            : `https://basescan.org/tx/${transactionId}`
-        }
-      >
-        View Tx
-      </Button.Link>,
-    ],
+    intents: [<Button.Link href={url}>View Tx</Button.Link>],
   });
 });
 
