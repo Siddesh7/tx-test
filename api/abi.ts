@@ -1,9 +1,13 @@
-export const abi = [
-  {
-    inputs: [{internalType: "uint256", name: "tokenId", type: "uint256"}],
-    name: "mint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-] as const;
+export const abi = {
+  inputs: [
+    {
+      internalType: "address",
+      name: "to",
+      type: "address",
+    },
+  ],
+  name: "safeMint",
+  outputs: [],
+  stateMutability: "nonpayable",
+  type: "function",
+} as const;

@@ -79,15 +79,14 @@ app.transaction("/send-ether", (c) => {
 });
 
 app.transaction("/mint", (c) => {
-  const {inputText} = c;
+  const {address} = c;
   // Contract transaction response.
   return c.contract({
-    abi,
-    chainId: "eip155:10",
-    functionName: "mint",
-    args: [69420n],
-    to: "0xd2135CfB216b74109775236E36d4b433F1DF507B",
-    value: parseEther(inputText!),
+    abi: abi as any,
+    chainId: "eip155:137" as any,
+    functionName: "safeMint",
+    args: [address],
+    to: "0xc8800816811f72324c765C3A9a4Cad013dC35c32",
   });
 });
 
