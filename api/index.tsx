@@ -46,7 +46,7 @@ app.frame("/", (c) => {
 });
 
 app.frame("/finish", (c) => {
-  const {transactionId} = c;
+  const {transactionId, buttonIndex} = c;
   console.log("Transaction ID:", transactionId);
   return c.res({
     image: (
@@ -54,7 +54,7 @@ app.frame("/finish", (c) => {
         style={{
           color: "white",
           display: "flex",
-          width: "100%",
+          width: "80%",
           height: "100%",
           justifyContent: "center",
           alignItems: "center",
@@ -67,6 +67,18 @@ app.frame("/finish", (c) => {
         <p style={{fontSize: "40px"}}>{transactionId}</p>
       </div>
     ),
+    intents: [
+      <Button.Redirect
+        location={
+          buttonIndex === 1
+            ? `https://polygonscan.com/tx/${transactionId}`
+            : `https://basescan.org/tx/${transactionId}`
+        }
+      >
+        View Tx
+      </Button.Redirect>,
+      <Button.Reset>Start Again</Button.Reset>,
+    ],
   });
 });
 
