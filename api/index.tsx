@@ -23,7 +23,6 @@ app.frame("/", (c) => {
         style={{
           color: "white",
           display: "flex",
-          fontSize: 60,
           width: "100%",
           height: "100%",
           justifyContent: "center",
@@ -63,8 +62,8 @@ app.frame("/finish", (c) => {
           backgroundColor: "black",
         }}
       >
-        <p style={{font: 60}}> Transaction Hash:</p>
-        <p style={{font: 40}}>{transactionId}</p>
+        <p style={{fontSize: "60px"}}> Transaction Hash:</p>
+        <p style={{fontSize: "40px"}}>{transactionId}</p>
       </div>
     ),
   });
