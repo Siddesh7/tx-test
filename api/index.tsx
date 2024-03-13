@@ -64,20 +64,19 @@ app.frame("/finish", (c) => {
         }}
       >
         <p style={{fontSize: "60px"}}> Transaction Hash:</p>
-        <p style={{fontSize: "40px", width: "80%"}}>{transactionId}</p>
+        <p style={{fontSize: "30px", width: "80%"}}>{transactionId}</p>
       </div>
     ),
     intents: [
-      <Button.Redirect
-        location={
+      <Button.Link
+        href={
           buttonIndex === 1
             ? `https://polygonscan.com/tx/${transactionId}`
             : `https://basescan.org/tx/${transactionId}`
         }
       >
         View Tx
-      </Button.Redirect>,
-      <Button.Reset>Start Again</Button.Reset>,
+      </Button.Link>,
     ],
   });
 });
