@@ -36,6 +36,7 @@ app.frame("/", (c) => {
         Send Polygon
       </Button.Transaction>,
       <Button.Transaction target="/send-ether">Send ETH</Button.Transaction>,
+      <Button.Transaction target="/mint">Mint</Button.Transaction>,
     ],
   });
 });
