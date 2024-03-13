@@ -54,7 +54,7 @@ app.frame("/finish", (c) => {
         style={{
           color: "white",
           display: "flex",
-          width: "80%",
+          width: "100%",
           height: "100%",
           justifyContent: "center",
           alignItems: "center",
@@ -64,7 +64,7 @@ app.frame("/finish", (c) => {
         }}
       >
         <p style={{fontSize: "60px"}}> Transaction Hash:</p>
-        <p style={{fontSize: "40px"}}>{transactionId}</p>
+        <p style={{fontSize: "40px", width: "80%"}}>{transactionId}</p>
       </div>
     ),
     intents: [
