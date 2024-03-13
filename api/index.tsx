@@ -84,7 +84,7 @@ app.transaction("/mint", (c) => {
     chainId: "eip155:11155111" as any,
     functionName: "safeMint",
     args: [],
-    to: "0xc8800816811f72324c765C3A9a4Cad013dC35c32",
+    to: "0x2C074C6b5BdC087471737b6c050d96aACfaEBE8d",
   });
 });
 
