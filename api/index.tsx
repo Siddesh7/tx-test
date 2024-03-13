@@ -19,7 +19,14 @@ app.frame("/", (c) => {
   return c.res({
     action: "/finish",
     image: (
-      <div style={{color: "white", display: "flex", fontSize: 60}}>
+      <div
+        style={{
+          color: "white",
+          display: "flex",
+          fontSize: 60,
+          backgroundColor: "black",
+        }}
+      >
         Perform a transaction
       </div>
     ),
@@ -37,7 +44,14 @@ app.frame("/finish", (c) => {
   const {transactionId} = c;
   return c.res({
     image: (
-      <div style={{color: "white", display: "flex", fontSize: 60}}>
+      <div
+        style={{
+          color: "white",
+          display: "flex",
+          fontSize: 60,
+          backgroundColor: "black",
+        }}
+      >
         Transaction ID: {transactionId}
       </div>
     ),
