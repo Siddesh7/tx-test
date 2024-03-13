@@ -58,11 +58,13 @@ app.frame("/finish", (c) => {
           height: "100%",
           justifyContent: "center",
           alignItems: "center",
-          fontSize: 60,
+          flexDirection: "column",
+          gap: 20,
           backgroundColor: "black",
         }}
       >
-        Transaction ID: {transactionId}
+        <p style={{font: 60}}> Transaction Hash:</p>
+        <p style={{font: 40}}>{transactionId}</p>
       </div>
     ),
   });
