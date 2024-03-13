@@ -25,7 +25,10 @@ app.frame("/", (c) => {
     ),
     intents: [
       <TextInput placeholder="Value (ETH)" />,
-      <Button.Transaction target="/send-ether">Send Ether</Button.Transaction>,
+      <Button.Transaction target="/send-etherm">
+        Send Polygon
+      </Button.Transaction>,
+      <Button.Transaction target="/send-etherb">Send ETH</Button.Transaction>,
       <Button.Transaction target="/mint">Mint</Button.Transaction>,
     ],
   });
@@ -42,12 +45,21 @@ app.frame("/finish", (c) => {
   });
 });
 
-app.transaction("/send-ether", (c) => {
+app.transaction("/send-etherm", (c) => {
   const {inputText} = c;
   // Send transaction response.
   return c.send({
     chainId: "eip155:137" as any,
-    to: "0xd2135CfB216b74109775236E36d4b433F1DF507B",
+    to: "0x1A3cDE21e27CA9a2670C2c647550D39a72d9637C",
+    value: parseEther(inputText!),
+  });
+});
+app.transaction("/send-etherb", (c) => {
+  const {inputText} = c;
+  // Send transaction response.
+  return c.send({
+    chainId: "eip155:8453" as any,
+    to: "0x1A3cDE21e27CA9a2670C2c647550D39a72d9637C",
     value: parseEther(inputText!),
   });
 });
